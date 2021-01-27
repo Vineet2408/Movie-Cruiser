@@ -127,6 +127,6 @@ function validate(){
           alert("Entered date is not valid!");
       }
   else{
-      window.open("edit-menu-item-status.html");
+      window.open("edit-movie-item-status.html");
   }
 }
