@@ -1,3 +1,4 @@
+var arr=[];
 var names=["Bahubali","Commando3","3idiots","IronMan3"];
     var boxOffice=["150","100","150","99"];
     var active=["yes","yes","no","yes"];
@@ -25,44 +26,33 @@ location.href="movie-item-list-customer-add-to-cart.html?id="+names[j]+"&id2="+b
 
 }
 var cnti=4;
-function b()
+
+function valueAssign()
 {
-    var qs = getQueryStrings();
+  var qs = getQueryStrings();
     arr.push(qs);
     var name = qs["id"];
     var price=qs["id2"];
     var fd=qs["id3"];
-    var cat=qs["id4"]
-    var table=document.getElementById("customer-notify-table");
-    var row=table.insertRow(cnti++);
-
-    var cell1=row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3=row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5=row.insertCell(4);
-
-    cell1.innerHTML = name;
-    cell2.innerHTML = price;
-    cell3.innerHTML =  cat;
-    cell4.innerHTML = fd;
-    cell5.innerHTML = "Add to Cart";
-
-    cell1.style.paddingRight="60px";
-    cell2.style.paddingLeft="60px";
-    cell3.style.paddingLeft="30px";
-    cell4.style.paddingLeft="30px";
-    cell5.style.paddingLeft="30px";
-
-    cell1.style.textAlign ="left";
-    cell2.style.textAlign ="right";
-    cell3.style.textAlign ="center";
-    cell4.style.textAlign ="center";
-    cell5.style.textAlign ="center";
-
-   
+    var cat=qs["id4"];
+    cat=cat.replace("%20"," ");
+    alert(name);
+    var nameField=document.getElementById("title0");
+    var priceField=document.getElementById("box_office0");
+    var catField=document.getElementById("genre0");
+    var teaser=document.getElementById("teaser0");
+    nameField.innerHTML=name;
+    priceField.innerHTML=price;
+    catField.innerHTML=cat;
+    if(fd=="available"||fd=="Available"||fd=="AVAILABLE")
+    {
+      teaser.innerHTML="verified";
+    }
+    else 
+    {
+      teaser.innerHTML="unpublished";;
+    }
 }
-
 function getQueryStrings() 
 { 
     
