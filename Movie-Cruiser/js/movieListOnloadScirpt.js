@@ -36,7 +36,6 @@ function valueAssign()
     var fd=qs["id3"];
     var cat=qs["id4"];
     cat=cat.replace("%20"," ");
-    alert(name);
     var nameField=document.getElementById("title0");
     var priceField=document.getElementById("box_office0");
     var catField=document.getElementById("genre0");
